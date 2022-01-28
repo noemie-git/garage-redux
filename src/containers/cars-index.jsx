@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class CarsIndex extends Component {
-
   renderCars() {
-    // TODO
+    return this.props.cars.map((car) => {
+      return (
+        <Link to={`/cars/${car.id}`} key={car.id}>
+          <div className="car-item">
+            <h3>{car.title}</h3>
+            <p>{car.content}</p>
+          </div>
+        </Link>
+      );
+    });
   }
 
   render() {
@@ -20,3 +30,8 @@ class CarsIndex extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return { cars: state.cars };
+}
+export default connect(mapStateToProps)(CarsIndex);
