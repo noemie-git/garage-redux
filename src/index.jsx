@@ -7,7 +7,7 @@ import reduxPromise from 'redux-promise';
 import logger from 'redux-logger';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
-import { CarsIndex } from './containers/cars-index';
+import CarsIndex from './containers/cars_index';
 
 import '../assets/stylesheets/application.scss';
 import carsReducer from './reducers/cars_reducer';

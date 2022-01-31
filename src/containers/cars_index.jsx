@@ -21,9 +21,7 @@ class CarsIndex extends Component {
       <div>
         <div className="first-row">
           <h3>Blog</h3>
-          <Link className="btn btn-primary btn-cta" to="/cars/new">
-            Let's add a car!
-          </Link>
+          <Link className="btn btn-primary btn-cta" to="/cars/new">Add a car!</Link>
         </div>
         {this.renderCars()}
       </div>
