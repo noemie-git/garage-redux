@@ -14,8 +14,10 @@ class CarsIndex extends Component {
       return (
         <Link to={`/cars/${car.id}`} key={car.id}>
           <div className="car-item">
-            <h3>{car.title}</h3>
-            <p>{car.content}</p>
+            <h4>{car.brand}</h4>
+            <p>{car.model}</p>
+            <p>{car.owner}</p>
+            <p>{car.plate}</p>
           </div>
         </Link>
       );
@@ -27,7 +29,7 @@ class CarsIndex extends Component {
       <div>
         <div className="first-row">
           <h3>Garage {this.props.garageName}</h3>
-          <Link className="btn btn-primary btn-cta" to="/cars/new">Add a car!</Link>
+          <Link className="btn btn-primary btn-cta" to="/cars/new">Add a new car</Link>
         </div>
         {this.renderCars()}
       </div>
