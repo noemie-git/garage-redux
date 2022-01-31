@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { fetchCars } from '../actions';
 
 class CarsIndex extends Component {
+  componentDidMount() {
+    this.props.fetchCars();
+  }
+
   renderCars() {
     return this.props.cars.map((car) => {
       return (
@@ -20,7 +26,7 @@ class CarsIndex extends Component {
     return (
       <div>
         <div className="first-row">
-          <h3>Blog</h3>
+          <h3>Garage {this.props.garageName}</h3>
           <Link className="btn btn-primary btn-cta" to="/cars/new">Add a car!</Link>
         </div>
         {this.renderCars()}
@@ -32,4 +38,9 @@ class CarsIndex extends Component {
 function mapStateToProps(state) {
   return { cars: state.cars };
 }
-export default connect(mapStateToProps)(CarsIndex);
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchCars }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CarsIndex);
