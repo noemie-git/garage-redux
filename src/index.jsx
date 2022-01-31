@@ -10,6 +10,7 @@ import { createHistory as history } from 'history';
 import { CarsIndex } from './containers/cars-index';
 
 import '../assets/stylesheets/application.scss';
+import carsReducer from './reducers/cars_reducer';
 
 const garageName = prompt("What is your garage?") || `garage${Math.floor(10 + (Math.random() * 90))}`;
 const initialState = {
@@ -28,11 +29,10 @@ const reducers = combineReducers({
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
-const store = createStore(reducers, initialState, middlewares);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={createStore(reducers, initialState, middlewares)}>
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={CarsIndex} />
