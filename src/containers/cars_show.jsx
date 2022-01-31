@@ -13,6 +13,8 @@ class CarsShow extends Component {
         <div className="car-item">
           <h3>{this.props.car.brand}</h3>
           <p>{this.props.car.model}</p>
+          <p>{this.props.car.owner}</p>
+          <p>{this.props.car.plate}</p>
         </div>
         <Link to="/">
         Back
