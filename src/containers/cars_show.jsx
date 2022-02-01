@@ -26,17 +26,18 @@ class CarsShow extends Component {
           <img src="https://images.unsplash.com/photo-1570129476815-ba368ac77013?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
           <div className="card-trip-infos">
             <p>Our garage is the most reliable and will be happy to advise no matter the type of vehicle.</p>
-            <Link to="/">Back </Link>
+            <Link className="btn btn-default" to="/">Back to list </Link>
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" alt="" className="card-trip-user avatar-bordered" />
           </div>
         </div>
         <div className="list-group-item col-xs-9">
-          <div className="card-product">
+          <div className="card-product-car">
             <img src="../../assets/car-icon.png" alt="car icon" />
             <div className="card-product-infos">
               <h3><strong>{brandUpCased} {modelUpCased}</strong></h3>
               <p><strong>Owner: </strong>{this.props.car.owner}</p>
               <p>{numPlate}</p>
+              <Link className="btn btn-danger" to="/">Delete </Link>
             </div>
           </div>
         </div>
