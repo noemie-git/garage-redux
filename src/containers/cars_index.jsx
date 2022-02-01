@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -13,11 +14,13 @@ class CarsIndex extends Component {
     return this.props.cars.map((car) => {
       return (
         <Link to={`/cars/${car.id}`} key={car.id}>
-          <div className="car-item">
-            <h4>{car.brand}</h4>
-            <p>{car.model}</p>
-            <p>{car.owner}</p>
-            <p>{car.plate}</p>
+          <div className="card-product">
+            <img src="../../assets/car-icon.png" />
+            <div className="card-product-infos">
+              <h2>{car.brand} {car.model}</h2>
+              <p>{car.owner}</p>
+              <p>{car.plate}</p>
+            </div>
           </div>
         </Link>
       );
@@ -27,11 +30,13 @@ class CarsIndex extends Component {
   render() {
     return (
       <div>
-        <div className="first-row">
+        <div className="list-group-item col-sm-3">
           <h3>Garage {this.props.garageName}</h3>
-          <Link className="btn btn-primary btn-cta" to="/cars/new">Add a new car</Link>
+          <Link className="btn btn-cta btn-secondary" to="/cars/new">Add a new car</Link>
         </div>
-        {this.renderCars()}
+        <div className="list-group-item col-sm-9">
+          {this.renderCars()}
+        </div>
       </div>
     );
   }
