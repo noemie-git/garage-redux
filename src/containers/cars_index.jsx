@@ -29,12 +29,16 @@ class CarsIndex extends Component {
 
   render() {
     return (
-      <div>
-        <div className="list-group-item col-sm-3">
-          <h3>Garage {this.props.garageName}</h3>
-          <Link className="btn btn-cta btn-secondary" to="/cars/new">Add a new car</Link>
+      <div className="row">
+        <div className="list-group-item col-xs-3 card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div className="card-trip-infos">
+            <h3>Garage {this.props.garageName}</h3>
+            <Link className="btn btn-default" to="/cars/new">Add a new car</Link>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" className="card-trip-user avatar-bordered" />
+          </div>
         </div>
-        <div className="list-group-item col-sm-9">
+        <div className="list-group-item col-xs-9">
           {this.renderCars()}
         </div>
       </div>
