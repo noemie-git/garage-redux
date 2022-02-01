@@ -31,14 +31,14 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
   color: black;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -83,10 +83,18 @@
   position: relative;
 }
 
+.card-trip-infos p {
+  position: absolute;
+  right: auto;
+  top: 120px;
+  width: -moz-available;
+  margin-right: 16px;
+}
+
 .card-trip-infos .btn {
   position: absolute;
   right: auto;
-  top: 130px;
+  top: 220px;
   width: -moz-available;
   font-weight: bold;
   font-size: 16px;

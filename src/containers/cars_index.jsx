@@ -17,7 +17,7 @@ class CarsIndex extends Component {
           <div className="card-product">
             <img src="../../assets/car-icon.png" />
             <div className="card-product-infos">
-              <h2><strong>{car.brand} {car.model}</strong></h2>
+              <h2><strong>{car.brand.toUpperCase()} {car.model.toUpperCase()}</strong></h2>
               <p><strong>Owner: </strong>{car.owner}</p>
             </div>
           </div>
@@ -33,7 +33,8 @@ class CarsIndex extends Component {
           <img src="https://images.unsplash.com/photo-1570129476815-ba368ac77013?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
           <div className="card-trip-infos">
             <h3>Garage {this.props.garageName}</h3>
-            <Link className="btn btn-default" to="/cars/new">Add a new car</Link>
+            <p>Our garage is the most reliable and will be happy to advise no matter the type of vehicle.</p>
+            <Link className="btn btn-default" to="/cars/new">Add a car</Link>
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" className="card-trip-user avatar-bordered" />
           </div>
         </div>
