@@ -28,7 +28,7 @@ class CarsIndex extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row garage-container">
         <div className="list-group-item col-xs-3 card-trip">
           <img src="https://images.unsplash.com/photo-1570129476815-ba368ac77013?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
           <div className="card-trip-infos">
