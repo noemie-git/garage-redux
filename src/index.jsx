@@ -38,7 +38,6 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact component={CarsIndex} />
         <Route path="/cars/:id" component={CarsShow} />
-        <Route path="/cars/:id/delete" />
         {/* <Route path="/cars/new" component={CarsNew} /> */}
       </Switch>
     </Router>

@@ -1,4 +1,6 @@
 // TODO: add and export your own actions
+import { History } from "history";
+
 export const FETCH_CARS = 'FETCH_CARS';
 export const FETCH_CAR = 'FETCH_CAR';
 export const DESTROY_CAR = 'DESTROY_CAR';
@@ -29,6 +31,7 @@ export function destroyCar(id) {
   )
     .then((response) => {
       console.log(`car removed: ${response}`);
+      history.push("/");
       return response.json();
     });
 
