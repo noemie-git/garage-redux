@@ -1,12 +1,9 @@
-.root {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 .garage-container {
   display: flex;
   margin-top: 40px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  min-height: 500px;
+  min-height: 50vh;
+  max-height: 80vh;
 }
 
 .list-group-item {
@@ -15,6 +12,7 @@
   padding: 0px;
   border: 1px solid #ddd;
   background-color: rgb(228, 228, 228);
+  contain: content;
 }
 
 .card-product {

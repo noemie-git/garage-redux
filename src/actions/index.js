@@ -25,7 +25,6 @@ export function destroyCar(id) {
   const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`,
     {
       method: 'DELETE',
-      redirect: `https://wagon-garage-api.herokuapp.com/:garage/cars`,
     }
   )
     .then(() => {

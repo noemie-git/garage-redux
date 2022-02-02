@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchCar, destroyCar } from '../actions';
+import { fetchCar, destroyCar, fetchCars } from '../actions';
 
 class CarsShow extends Component {
   componentDidMount() {
@@ -14,7 +14,8 @@ class CarsShow extends Component {
 
   componentWillUnmount() {
     const el = document.getElementById("delete");
-    el.addEventListener("click", this.props.destroyCar(this.props.match.params.id), false);
+    el.addEventListener(this.props.onClick, this.props.destroyCar(this.props.match.params.id), false);
+    this.props.fetchCars();
   }
 
   render() {
@@ -42,7 +43,7 @@ class CarsShow extends Component {
               <h3><strong>{brandUpCased} {modelUpCased}</strong></h3>
               <p><strong>Owner: </strong>{this.props.car.owner}</p>
               <p className="num-plate"><strong>{numPlate}</strong></p>
-              <Link className="btn btn-danger" id="delete" to={`/cars/${this.props.car.id}`}>Delete </Link>
+              <Link className="btn btn-danger" id="delete" to="/">Delete </Link>
             </div>
           </div>
         </div>
@@ -58,7 +59,7 @@ function mapStateToProps(state, props) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchCar, destroyCar }, dispatch);
+  return bindActionCreators({ fetchCar, destroyCar, fetchCars }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarsShow);
