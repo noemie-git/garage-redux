@@ -1,4 +1,4 @@
-import { FETCH_CARS, FETCH_CAR } from "../actions";
+import { FETCH_CARS, FETCH_CAR, DESTROY_CAR } from "../actions";
 
 export default function (state = [], action) {
   switch (action.type) {
@@ -6,6 +6,8 @@ export default function (state = [], action) {
       return action.payload;
     case FETCH_CAR:
       return [action.payload];
+    case DESTROY_CAR:
+      return action.payload;
     default:
       return state;
   }

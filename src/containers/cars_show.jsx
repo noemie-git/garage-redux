@@ -3,13 +3,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchCar } from '../actions';
+import { fetchCar, destroyCar } from '../actions';
 
 class CarsShow extends Component {
   componentDidMount() {
     if (!this.props.car) {
       this.props.fetchCar(this.props.match.params.id);
     }
+  }
+  componentWillUnmount() {
+    this.props.destroyCar(this.props.match.params.id);
   }
 
   render() {
@@ -36,8 +39,8 @@ class CarsShow extends Component {
             <div className="card-product-infos">
               <h3><strong>{brandUpCased} {modelUpCased}</strong></h3>
               <p><strong>Owner: </strong>{this.props.car.owner}</p>
-              <p>{numPlate}</p>
-              <Link className="btn btn-danger" to="/">Delete </Link>
+              <p className="btn num-plate">{numPlate}</p>
+              <Link className="btn btn-danger delete" to="/cars/:id">Delete </Link>
             </div>
           </div>
         </div>
