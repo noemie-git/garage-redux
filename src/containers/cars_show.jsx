@@ -18,9 +18,9 @@ class CarsShow extends Component {
   }
 
   destroyCar(event) {
-    console.log(`Delete event is ${this.state.car.id}`);
+    console.log(`Delete event is ${this.props.match.params.id}`);
     event.preventDefault();
-    destroyCar(this.props.car.id);
+    destroyCar(this.props.match.params.id);
   }
 
   render() {
@@ -48,7 +48,7 @@ class CarsShow extends Component {
               <h3><strong>{brandUpCased} {modelUpCased}</strong></h3>
               <p><strong>Owner: </strong>{this.props.car.owner}</p>
               <p className="num-plate"><strong>{numPlate}</strong></p>
-              <button onClick={this.destroyCar} className="btn btn-danger" id="delete">Delete</button>
+              <Link onClick={this.destroyCar} className="btn btn-danger" id="delete" to="\" ><i className="fa fa-trash" aria-hidden="true" />Delete</Link>
             </div>
           </div>
         </div>

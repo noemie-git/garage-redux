@@ -9,6 +9,10 @@ export default function (state = [], action) {
       return [action.payload];
     case DESTROY_CAR: {
       const newState = Object.assign([], state);
+      const indexOfCarToDelete = state.findIndex((car) => {
+        return car.id === action.car.id;
+      });
+      newState.splice(indexOfCarToDelete, 1);
       const history = createBrowserHistory();
       history.push('/');
       return newState;
