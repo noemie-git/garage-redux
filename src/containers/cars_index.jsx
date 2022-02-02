@@ -7,10 +7,12 @@ import { fetchCars } from '../actions';
 
 class CarsIndex extends Component {
   componentDidMount() {
+    console.log('Fetching cars...');
     this.props.fetchCars();
   }
 
   renderCars() {
+    console.log(this.props.cars);
     return this.props.cars.map((car) => {
       return (
         <Link to={`/cars/${car.id}`} key={car.id}>

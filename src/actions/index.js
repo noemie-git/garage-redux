@@ -27,9 +27,11 @@ export function destroyCar(id) {
       method: 'DELETE',
     }
   )
-    .then(() => {
-      console.log('car removed');
+    .then((response) => {
+      console.log(`car removed: ${response}`);
+      return response.json();
     });
+
   return {
     type: DESTROY_CAR,
     payload: promise

@@ -12,10 +12,14 @@ class CarsShow extends Component {
     }
   }
 
-  componentWillUnmount() {
-    const el = document.getElementById("delete");
-    el.addEventListener(this.props.onClick, this.props.destroyCar(this.props.match.params.id), false);
-    this.props.fetchCars();
+  shouldComponentUpdate() {
+    console.log(`shouldComponentUpdate: ${this.props.car}`);
+    return this.props.car !== undefined;
+  }
+
+  destroyCar(event) {
+    event.preventDefault();
+    this.props.destroyCar(this.props.match.params.id);
   }
 
   render() {
@@ -43,7 +47,8 @@ class CarsShow extends Component {
               <h3><strong>{brandUpCased} {modelUpCased}</strong></h3>
               <p><strong>Owner: </strong>{this.props.car.owner}</p>
               <p className="num-plate"><strong>{numPlate}</strong></p>
-              <Link className="btn btn-danger" id="delete" to="/">Delete </Link>
+              <button className="btn btn-danger" id="delete" onClick={this.destroyCar}>Delete </button>
+              {/* <Link className="btn btn-danger" id="delete" to={`/cars/${this.props.car.id}/delete`}>Delete</Link> */}
             </div>
           </div>
         </div>
