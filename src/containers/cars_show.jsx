@@ -13,8 +13,8 @@ class CarsShow extends Component {
   }
 
   shouldComponentUpdate() {
-    console.log(`shouldComponentUpdate: ${this.props.car}`);
-    return this.props.car !== undefined;
+    console.log(`shouldComponentUpdate: ${this.props.match.params.id}`);
+    return this.props.match.params.id !== undefined;
   }
 
   destroyCar(event) {

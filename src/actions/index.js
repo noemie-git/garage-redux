@@ -1,5 +1,5 @@
 // TODO: add and export your own actions
-import { History } from "history";
+import { history } from "history";
 
 export const FETCH_CARS = 'FETCH_CARS';
 export const FETCH_CAR = 'FETCH_CAR';
