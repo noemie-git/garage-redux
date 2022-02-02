@@ -7,7 +7,7 @@ export default function (state = [], action) {
     case FETCH_CAR:
       return [action.payload];
     case DESTROY_CAR:
-      return action.payload;
+      return [action.payload];
     default:
       return state;
   }

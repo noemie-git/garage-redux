@@ -48,14 +48,14 @@
 }
 
 .card-product-car h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
   color: black;
 }
 
 .card-product h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
   color: black;
@@ -150,8 +150,8 @@
 
 .card-product-car .card-product-infos .num-plate {
   display: inline-block;
-  font-weight: bold;
+  border: 1px solid black;
+  font-weight: 900;
   padding: 10px 20px;
   color: black;
-  border: 1px solid black;
 }

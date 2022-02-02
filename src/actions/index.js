@@ -13,7 +13,7 @@ export function fetchCars() {
 }
 
 export function fetchCar(id) {
-  const promise = fetch(`https://wagon-garage-api.herokuapp.com/:garage/cars/${id}`)
+  const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`)
     .then(response => response.json());
   return {
     type: FETCH_CAR,
@@ -22,9 +22,10 @@ export function fetchCar(id) {
 }
 
 export function destroyCar(id) {
-  const promise = fetch(`https://wagon-garage-api.herokuapp.com/:garage/cars/${id}`,
+  const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`,
     {
       method: 'DELETE',
+      redirect: `https://wagon-garage-api.herokuapp.com/:garage/cars`,
     }
   )
     .then(() => {

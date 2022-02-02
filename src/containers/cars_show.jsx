@@ -9,10 +9,8 @@ class CarsShow extends Component {
   componentDidMount() {
     if (!this.props.car) {
       this.props.fetchCar(this.props.match.params.id);
+      // this.props.destroyCar(this.props.match.params.id);
     }
-  }
-  componentWillUnmount() {
-    this.props.destroyCar(this.props.match.params.id);
   }
 
   render() {
@@ -39,8 +37,8 @@ class CarsShow extends Component {
             <div className="card-product-infos">
               <h3><strong>{brandUpCased} {modelUpCased}</strong></h3>
               <p><strong>Owner: </strong>{this.props.car.owner}</p>
-              <p className="btn num-plate">{numPlate}</p>
-              <Link className="btn btn-danger delete" to="/cars/:id">Delete </Link>
+              <p className="num-plate"><strong>{numPlate}</strong></p>
+              <Link className="btn btn-danger delete" to={`/cars/${this.props.car.id}`}>Delete </Link>
             </div>
           </div>
         </div>
@@ -49,14 +47,14 @@ class CarsShow extends Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
-  const id = parseInt(ownProps.match.params.id, 10);
+function mapStateToProps(state, props) {
+  const id = parseInt(props.match.params.id, 10);
   const car = state.cars.find(c => c.id === parseInt(id, 10));
   return { car };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchCar }, dispatch);
+  return bindActionCreators({ fetchCar, destroyCar }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarsShow);
