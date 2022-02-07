@@ -31,7 +31,7 @@ class CarsIndex extends Component {
   render() {
     return (
       <div className="row garage-container">
-        <div className="list-group-item col-xs-3 card-trip">
+        <div className="list-group-item menu-bar col-xs-3 card-trip">
           <img src="https://images.unsplash.com/photo-1570129476815-ba368ac77013?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
           <div className="card-trip-infos">
             <h3>Garage {this.props.garage}</h3>
@@ -40,7 +40,7 @@ class CarsIndex extends Component {
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" className="card-trip-user avatar-bordered" />
           </div>
         </div>
-        <div className="list-group-item col-xs-9">
+        <div className="list-group-item car-list col-xs-9">
           {this.renderCars()}
         </div>
       </div>

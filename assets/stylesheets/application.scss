@@ -147,14 +147,35 @@
   border: 3px solid white;
 }
 
-.card-product-car .card-product-infos .num-plate {
+.card-product-car .num-plate {
   display: inline-block;
   border: 1px solid black;
-  font-weight: 900;
-  padding: 10px 20px;
+  padding: 10px 37px;
   color: black;
+  font-size: 18px;
 }
 
 .fa {
  padding: 2px 14px 2px 2px;
 }
+
+#delete {
+  line-height: 12px;
+  border-radius: 1px;
+  width: 100px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 1px;
+  margin-right: 2px;
+  position:absolute;
+  top: 155px;
+  right: 7px;
+ }
+
+.avatar-bordered {
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  margin-top: -5px;
+  margin-left: -25px;
+ }
