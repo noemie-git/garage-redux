@@ -186,7 +186,7 @@
    object-fit: cover;
  }
 .new-car-form .form-container {
-  position: relative;
+  max-height: 450px;
   background: white;
   opacity: 1;
   margin: 10% 20%;
@@ -197,13 +197,14 @@
 }
 
 .submit-button button {
-  background-color: rgb(139, 13, 34);
+  background-color: rgb(190, 16, 45);
   width: 150px;
-  padding: 10px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-left: 30%;
   color: white;
   font-weight: bold;
   font-size: 14px;
-  border: 1px solid black;
+  border: 1px solid red;
   border-radius: 2px;
-  margin: 50%
 }
