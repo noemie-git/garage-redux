@@ -8,7 +8,7 @@ import { fetchCars } from '../actions';
 class CarsIndex extends Component {
   componentDidMount() {
     console.log('Fetching cars...');
-    this.props.fetchCars();
+    this.props.fetchCars(this.props.garage);
   }
 
   renderCars() {
@@ -19,7 +19,7 @@ class CarsIndex extends Component {
           <div className="card-product">
             <img src="../../assets/car-icon.png" />
             <div className="card-product-infos">
-              <h2><strong>{car.brand.toUpperCase()} {car.model.toUpperCase()}</strong></h2>
+              <h2><strong>{car.brand.toUpperCase()} - {car.model.toUpperCase()}</strong></h2>
               <p><strong>Owner: </strong>{car.owner}</p>
             </div>
           </div>
@@ -34,7 +34,7 @@ class CarsIndex extends Component {
         <div className="list-group-item menu-bar col-xs-3 card-trip">
           <img src="https://images.unsplash.com/photo-1570129476815-ba368ac77013?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
           <div className="card-trip-infos">
-            <h3>Garage {this.props.garage}</h3>
+            <h3>{this.props.garage}</h3>
             <p>Our garage is the most reliable and will be happy to advise no matter the type of vehicle.</p>
             <Link className="btn btn-default" to="/cars/new">Add a car</Link>
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" className="card-trip-user avatar-bordered" />

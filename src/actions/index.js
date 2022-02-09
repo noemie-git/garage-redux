@@ -1,12 +1,10 @@
 // TODO: add and export your own actions
-import { history } from "history";
-
 export const FETCH_CARS = 'FETCH_CARS';
 export const FETCH_CAR = 'FETCH_CAR';
 export const DESTROY_CAR = 'DESTROY_CAR';
 
-export function fetchCars() {
-  const promise = fetch(`https://wagon-garage-api.herokuapp.com/:garage/cars`)
+export function fetchCars(garage) {
+  const promise = fetch(`https://wagon-garage-api.herokuapp.com/${garage}/cars`)
     .then(response => response.json());
   return {
     type: FETCH_CARS,
@@ -14,8 +12,8 @@ export function fetchCars() {
   };
 }
 
-export function fetchCar(id) {
-  const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`)
+export function fetchCar(car) {
+  const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${car.id}`)
     .then(response => response.json());
   return {
     type: FETCH_CAR,
@@ -23,20 +21,14 @@ export function fetchCar(id) {
   };
 }
 
-export function destroyCar(id) {
-  const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`,
-    {
-      method: 'DELETE',
-    }
-  )
-    .then((response) => {
-      console.log(`car removed: ${response}`);
-      history.push("/");
-      return response.json();
-    });
+export function destroyCar(history, car) {
+  fetch(`https://wagon-garage-api.herokuapp.com/cars/${car.id}`,
+    { method: 'DELETE' })
+    .then(response => response.json())
+    .then(() => history.push(""));
 
   return {
     type: DESTROY_CAR,
-    payload: promise
+    payload: car
   };
 }
