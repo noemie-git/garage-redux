@@ -24,16 +24,19 @@ export function destroyCar(history, car) {
   };
 }
 
-export function addCar(car) {
-  const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${car.id}`,
-    { method: 'POST' },
-    body: {
-      "brand": "PEUGEOT",
-      "model": "106",
-      "owner": "ssaunier",
-      "plate": "123AZ56"
-      })
-    .then(response => response.json());
+export function addCar(garage, car, callback) {
+  const promise = fetch(`https://wagon-garage-api.herokuapp.com/${garage}/cars/`,
+    {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(car)
+    })
+    .then(response => response.json())
+    .then(() => callback());
+
   return {
     type: ADD_CAR,
     payload: promise

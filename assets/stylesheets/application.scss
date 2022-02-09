@@ -180,3 +180,30 @@
   margin-top: -5px;
   margin-left: -25px;
  }
+
+ .new-car-form {
+   background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+   object-fit: cover;
+ }
+.new-car-form .form-container {
+  position: relative;
+  background: white;
+  opacity: 1;
+  margin: 10% 20%;
+  padding: 5% 5%;
+}
+.form-container .form-group {
+  width: 100%;
+}
+
+.submit-button button {
+  background-color: rgb(139, 13, 34);
+  width: 150px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 50%
+}
